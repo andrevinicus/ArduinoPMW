@@ -1,41 +1,3 @@
-# Controle de Velocidade de Motor com Arduino e PWM
-
-## Introdução
-
-Este projeto demonstra como controlar a velocidade de um motor DC utilizando um Arduino e PWM (Pulse Width Modulation). O PWM permite controlar a potência fornecida ao motor variando a largura dos pulsos, proporcionando um controle eficiente e suave da velocidade do motor.
-
-## Componentes Necessários
-
-- 1 Arduino Nano
-- 1 Motor 
-- 1 Resistor
-- 1 Bateria de 5 V
-- 1 Botão 
-- 1 Resistor de 10kΩ (para o pull-up do botão)
-- Fios de conexão
-- Protobord
-- Protoboard
-
-## Esquemático
-
-Aqui está o esquemático do projeto:
-
-![alt text](image.png))
-
-### Conexões:
-
-- **Botão:**
-  - Um lado do botão conectado ao pino 2 do Arduino
-  - O outro lado do botão conectado ao GND através de um resistor de 10kΩ
-  - O lado do botão conectado ao pino 2 também conectado ao 5V
-  
-- **Motor e Transistor:**
-  - Um dos polos do motor foi conectado ao OUT1 do l293D e o outro lado ao OUT2
-  - Emissor do transistor conectado ao GND
-
-## Código Fonte
-
-```cpp
 #include <Arduino.h>
 
 const int buttonPin = 2; // Pino ao qual o botão está conectado
@@ -46,7 +8,7 @@ int lastButtonState = 0; // Último estado do botão
 int currentStep = 0; // Passo atual do algoritmo
 
 // Valores de PWM a serem escritos no pino do motor (começando de 0 e aumentando)
-const int pwmValues[] = {0, 64, 127, 191, 255};
+const int pwmValues[] = {255, 191, 127, 64, 0};
 const int numSteps = sizeof(pwmValues) / sizeof(pwmValues[0]);
 
 void setup() {
