@@ -20,7 +20,8 @@ Este projeto demonstra como controlar a velocidade de um motor DC utilizando um 
 
 Aqui está o esquemático do projeto:
 
-![alt text](image.png))
+![image](https://github.com/andrevinicus/ArduinoPMW/assets/102330781/a4c97e6a-6f79-453d-b69b-c3a334d19085)
+
 
 ### Conexões:
 
